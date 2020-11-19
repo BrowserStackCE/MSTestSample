@@ -3,7 +3,6 @@
     <Files>
       <File FileName="Properties/AssemblyInfo.cs" Line="28" Column="5" />
       <File FileName="BrowserstackMStestConfig.cs" Line="27" Column="77" />
-      <File FileName="appsettings.json" />
       <File FileName="LocalTest.cs" />
       <File FileName="MSTestSample.csproj" />
       <File FileName="ParallelTest.cs" />
