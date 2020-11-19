@@ -66,7 +66,7 @@ namespace MSTestSample
                     List<KeyValuePair<string, string>> bsLocalArgs = new List<KeyValuePair<string, string>>() {
                         new KeyValuePair<string, string>("key", configuration["appSettings:key"])};
                     bsLocalArgs.Add(new KeyValuePair<string, string>("onlyAutomate", "true"));
-                    bsLocalArgs.Add(new KeyValuePair<string, string>("binarypath", "/Users/rathilpatel/Downloads/BrowserStackLocal"));
+                    bsLocalArgs.Add(new KeyValuePair<string, string>("binarypath", "<Absolute PATH FOR BINARY>"));
                     browserStackLocal.start(bsLocalArgs);
                     Thread.Sleep(5000);
                     Console.WriteLine("Local Running: " + browserStackLocal.isRunning());
