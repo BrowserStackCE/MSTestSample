@@ -14,16 +14,18 @@ namespace MSTestSample
     [TestClass]
     public class LocalTest : BrowserstackMStestConfig
     {
-        [TestMethod]
-        [TestCategory("smoke")]
-        [TestCategory("Local")]
-        [TestProperty("Env","Pvt")]
-        public void localTest()
-        {
+        //public LocalTest(string profile, string environment) : base(profile, environment) { }
 
-            driver.Navigate().GoToUrl("http://google.com");
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow("local", "chrome")]
+        public void localTest(string profile, string environment)
+        {
+            IWebDriver driver = Init(profile, environment);
+            driver.Navigate().GoToUrl("localhost:8000");
             System.Threading.Thread.Sleep(5000);
-            Assert.IsTrue(driver.Title == "Google");
+            Assert.IsTrue(driver.Title == "Local Server");
 
 
 

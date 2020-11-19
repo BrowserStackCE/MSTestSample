@@ -13,23 +13,34 @@ namespace MSTestSample
     [TestClass]
     public class ParallelTest : BrowserstackMStestConfig
     {
-        [TestMethod]   
-        public void parallelTest()
+        //public ParallelTest(string profile, string environment) : base(profile, environment) { }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow("parallel", "firefox")]
+        public void parallelTest(string profile, string environment)
         {
+            IWebDriver driver = Init(profile, environment);
             driver.Navigate().GoToUrl("http://google.com");
             System.Threading.Thread.Sleep(5000);
             Assert.IsTrue(driver.Title == "Google");
         }
         [TestMethod]
-        public void parallelTest1()
+        [DataTestMethod]
+        [DataRow("parallel", "chrome")]
+        public void parallelTest1(string profile, string environment)
         {
-            driver.Navigate().GoToUrl("http://browserstack.com");
+            IWebDriver driver = Init(profile, environment);
+            driver.Navigate().GoToUrl("http://google.com");
             System.Threading.Thread.Sleep(5000);
-            Assert.IsTrue(driver.Title == "Browserstack");
+            Assert.IsTrue(driver.Title == "Google");
         }
         [TestMethod]
-        public void parallelTest2()
+        [DataTestMethod]
+        [DataRow("parallel", "safari")]
+        public void parallelTest2(string profile, string environment)
         {
+            IWebDriver driver = Init(profile, environment);
             driver.Navigate().GoToUrl("http://google.com");
             System.Threading.Thread.Sleep(5000);
             Assert.IsTrue(driver.Title == "Google");
