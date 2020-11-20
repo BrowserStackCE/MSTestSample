@@ -1,4 +1,5 @@
 .DS_Store
+.vs/
 MSTestSample/.DS_Store
 MSTestSample/bin
 MSTestSample/obj
